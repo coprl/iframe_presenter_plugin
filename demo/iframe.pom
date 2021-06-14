@@ -8,7 +8,7 @@ Coprl::Presenters.define(:iframe, namespace: :plugins) do
 
   indented_grid do
     subheading 'Embed an iFrame'
-    iframe 'https://en.wikipedia.org/wiki/Special:Random' #height: "500px",scrolling: :yes | :no (default)
+    iframe 'https://en.wikipedia.org/wiki/Special:Random', height: "500px",scrolling: :yes # | :no (default)
 
     attach :code, file: __FILE__
   end
