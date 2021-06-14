@@ -1,5 +1,5 @@
 require_relative 'iframe/component'
-module Voom
+module Coprl
   module Presenters
     module Plugins
       module Iframe
@@ -9,12 +9,15 @@ module Voom
           end
         end
         module WebClientComponents
+          def view_dir_iframe(pom)
+            File.join(__dir__, '../../../..', 'views', 'components')
+          end
+
           def render_iframe(comp,
                          render:,
                          components:,
                          index:)
-            view_dir = File.join(__dir__, 'iframe')
-            render.call :erb, :iframe, views: view_dir,
+            render.call :erb, :iframe, views: view_dir_iframe(comp),
                         locals: {comp: comp,
                                  components: components, index: index}
           end
