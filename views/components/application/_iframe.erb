@@ -2,5 +2,6 @@
         src="<%= comp.src %>"
         scrolling="<%= comp.scrolling %>"
         <% if comp.width %>width="<%= comp.width %>"<% end %>
-        <% if comp.height %>height="<%= comp.height %>"<% end %>>
+        <% if comp.height %>height="<%= comp.height %>"<% end %>
+        <%= partial "components/event", locals: {comp: comp, events: comp.events, parent_id: comp.event_parent_id} if comp.events&.any? %>>
 </iframe>
